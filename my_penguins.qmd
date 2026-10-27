@@ -1,5 +1,5 @@
 ---
-title: "penguin_analysis_demo"
+title: "my_penguins"
 author: "Maxwell Yung, mjy478"
 format: html
 ---
@@ -9,6 +9,17 @@ format: html
 ```{r}
 library(tidyverse)
 library(palmerpenguins)
+glimpse(penguins)
+```
+
+## Summary Table
+
+```{r}
+penguins |>
+  group_by(species) |>
+  summarize(
+    average_bill_length = mean(bill_length_mm, na.rm = TRUE)
+  )
 ```
 
 ## Analysis
