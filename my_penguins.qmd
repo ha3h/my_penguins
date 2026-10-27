@@ -1,0 +1,21 @@
+---
+title: "penguin_analysis_demo"
+author: "Maxwell Yung, mjy478"
+format: html
+---
+
+## Libraries
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Analysis
+
+```{r}
+penguins |>
+  ggplot(mapping = aes(x = species, y = body_mass_g), fill = species) +
+  geom_boxplot() + 
+  labs(title = "Penguin Body Mass by Species", x = "Species", y = "Body Mass")
+```
